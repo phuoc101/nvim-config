@@ -1,5 +1,6 @@
 -- Core
 require "core.options"
+require "config.nvim-notify"
 require "core.keymaps"
 require "core.plugins"
 require "core.lsp"
@@ -21,3 +22,4 @@ require "config.toggleterm"
 require "config.indentline"
 require "config.alpha"
 require "config.whichkey"
+require "config.lsp-lines"
