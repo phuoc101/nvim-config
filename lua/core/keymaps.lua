@@ -46,7 +46,9 @@ keymap("n", "E", "$", opts)
 -- Insert --
 -- Press jk fast to exit insert mode 
 keymap("i", "jk", "<ESC>", opts)
-keymap("i", "kj", "<ESC>", opts)
+
+-- Delete a word with ctr+backspace
+keymap("i", "<C-Backspace>", "<ESC>bdwi", opts)
 
 -- Visual --
 -- Stay in indent mode
