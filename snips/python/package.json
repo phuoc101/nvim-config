@@ -1,0 +1,61 @@
+{
+  "contributes": {
+    "snippets": [
+      {
+        "language": "python",
+        "path": "./base.json"
+      },
+      {
+        "language": "python",
+        "path": "./ros1.json"
+      },
+      {
+        "language": "python",
+        "path": "./ros2.json"
+      },
+      {
+        "language": "python",
+        "path": "./cv.json"
+      },
+      {
+        "language": "python",
+        "path": "./math.json"
+      },
+      {
+        "language": "python",
+        "path": "./plt.json"
+      },
+      {
+        "language": "python",
+        "path": "./yaml.json"
+      },
+      {
+        "language": "python",
+        "path": "./pycuda.json"
+      },
+      {
+        "language": "python",
+        "path": "./threading.json"
+      },
+      {
+        "language": "python",
+        "path": "./pytorch.json"
+      },
+      {
+        "language": "python",
+        "path": "./torchvision.json"
+      },
+      {
+        "language": "python",
+        "path": "./xml.json"
+      },
+      {
+        "language": "python",
+        "path": "./os.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "emojione": "^4.5.0"
+  }
+}

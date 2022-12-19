@@ -1,0 +1,10 @@
+{
+  "contributes": {
+    "snippets": [
+      {
+        "language": [ "plaintex", "tex" ],
+        "path": "./base.json"
+      }
+    ]
+  }
+}

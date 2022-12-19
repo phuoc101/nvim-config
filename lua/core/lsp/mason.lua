@@ -3,10 +3,11 @@ local servers = {
 	-- "cssls",
 	-- "html",
 	-- "tsserver",
-	"pyright",
-	-- "bashls",
+	"jedi_language_server",
+	"bashls",
 	"jsonls",
 	-- "yamlls",
+  "clangd"
 }
 
 local settings = {

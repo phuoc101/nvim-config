@@ -1,0 +1,24 @@
+{
+  "Python xml element tree import": {
+    "prefix": "xml:import",
+    "body": [
+      "import xml.etree.ElementTree as ET"
+    ],
+    "description": "Python xml element tree import"
+  },
+  "Python xml iterations": {
+    "prefix": "xml:iter",
+    "body": [
+      "for ${1:child} in ${2:root}.findall('${3:elem_2_find}'):",
+      "    pass"
+    ],
+    "description": "Python xml iterations"
+  },
+  "Python xml get root": {
+    "prefix": "xml:getroot",
+    "body": [
+      "root = ET.parse('${1: xml file}.xml')"
+    ],
+    "description": "Python xml get root"
+  }
+}

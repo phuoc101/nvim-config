@@ -1,0 +1,41 @@
+{
+  "ROS launch include": {
+    "prefix": "inc",
+    "body": [
+      "<include file=\"$(find ${1:pkg-name})/${2:path/filename.launch}\" >",
+      "    ${5:params}",
+      "</include>"
+    ],
+    "description": "ROS launch include"
+  },
+  "ROS launch node": {
+    "prefix": "node",
+    "body": [
+      "<node name=\"${1:node_name}\" pkg=\"${2:pkg_name}\" type=\"${3:type}\" output=\"${4:screen}\" >",
+      "    ${5:params}",
+      "</node>"
+    ],
+    "description": "ROS launch node"
+  },
+  "ROS launch param": {
+    "prefix": "param",
+    "body": [
+      "<param name=\"${1:param name}\" value=\"$(arg ${2:argname})\" />"
+    ],
+    "description": "ROS launch param"
+  },
+  "Define xml version": {
+    "prefix": "xml",
+    "body": [
+      "<?xml version=\"1.0\"?>"
+    ],
+    "description": "Define xml version"
+  },
+  "ROS launch arg": {
+    "prefix": "arg",
+    "body": [
+      "<arg name=\"${1:argname}\" default=\"${2:argval}\" />"
+    ],
+    "description": "ROS launch arg"
+  }
+}

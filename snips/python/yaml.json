@@ -1,0 +1,10 @@
+{
+  "Read from yaml": {
+    "prefix": "yamlload",
+    "body": [
+      "with open(\"${1:filename}\") as f:",
+      "    ${2:dict} = yaml.load(f, Loader = yaml.FullLoader)"
+    ],
+    "description": "Read from yaml"
+  }
+}

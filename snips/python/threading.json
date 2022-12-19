@@ -1,0 +1,17 @@
+{
+  "python thread lock": {
+    "prefix": "lock",
+    "body": [
+      "${1:lock name} = threading.Lock()"
+    ],
+    "description": "python thread lock"
+  },
+  "python thread with daemon option": {
+    "prefix": "thread",
+    "body": [
+      "${1:thread name} = threading.Thread(target=${2:thread_function}, args=(${3:args},), daemon=${4:True})",
+      "${1:thread name}"
+    ],
+    "description": "python thread with daemon option"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "Get file absolute directory": {
+    "prefix": ["dir", "osdir"],
+    "body": [
+      "os.path.dirname(os.path.abspath(__file__))"
+    ],
+    "description": "Get file absolute directory"
+  },
+  "Add to root system path": {
+    "prefix": "syspath",
+    "body": [
+      "ROOT = os.path.dirname(os.path.abspath(__file__))",
+      "if str(ROOT) not in sys.path:",
+      "    sys.path.append(str(ROOT))",
+      ""
+    ],
+    "description": "Add to root system path"
+  }
+}

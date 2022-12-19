@@ -1,0 +1,143 @@
+{
+  "Latex document": {
+    "prefix": "doc",
+    "body": [
+      "\\documentclass[11pt]{article}",
+      "\\usepackage{enumitem}",
+      "\\usepackage{amsmath}",
+      "\\usepackage{graphicx}",
+      "\\usepackage{float}",
+      "\\usepackage[colorlinks=true,urlcolor=blue]{hyperref}",
+      "\\usepackage[font=bf]{caption}",
+      "\\usepackage[export]{adjustbox}[2011/08/13]",
+      "",
+      "\\usepackage{listings}",
+      "\\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white",
+      "\\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue",
+      "\\definecolor{mylilas}{RGB}{170,55,241}",
+      "",
+      "\\graphicspath{ { $1} }",
+      "\\title{$2}",
+      "\\author{Thuan Phuoc Nguyen}",
+      "\\date{}",
+      "    ",
+      "\\usepackage{geometry}",
+      " \\geometry{",
+        " a4paper,",
+        " total={170mm,257mm},",
+        " left=20mm,",
+        " top=20mm,",
+        "}",
+        "\\begin{document}",
+        "\\maketitle",
+        "\\thispagestyle{empty}",
+        "",
+        "\\lstset{language=Matlab,%",
+          "    %basicstyle=\\color{red},",
+          "    breaklines=true,%",
+          "    morekeywords={matlab2tikz},",
+          "    keywordstyle=\\color{blue},%",
+          "    morekeywords=[2]{1}, keywordstyle=[2]{\\color{black}},",
+          "    identifierstyle=\\color{black},%",
+          "    stringstyle=\\color{mylilas},",
+          "    commentstyle=\\color{mygreen},%",
+          "    showstringspaces=false,%without this there will be a symbol in the places where there is a space",
+          "    numbers=left,%",
+          "    numberstyle={\\tiny \\color{black}},% size of the numbers",
+          "    numbersep=9pt, % this defines how far the numbers are from the text",
+          "    emph=[1]{for,end,break},emphstyle=[1]\\color{red}, %some words to emphasise",
+          "    %emph=[2]{word1,word2}, emphstyle=[2]{style},    ",
+          "}",
+          "",
+          "\\section*{$3} ",
+          "",
+          "\\end{document}",
+          ""
+    ],
+    "description": "Latex document"
+  },
+  "Latex equation": {
+    "prefix": "eqn",
+    "body": [
+      "\\begin{equation} \\label{eq:${1:eqn name}}",
+      "${2:eqn}",
+      "\\end{equation}"
+    ],
+    "description": "Latex equation"
+  },
+  "Latex enumerate": {
+    "prefix": "enum",
+    "body": [
+      "\\begin{enumerate}[label=\\alph*)]",
+      "\\item  ",
+      "\\end{enumerate}"
+    ],
+    "description": "Latex enumerate"
+  },
+  "Latex fraction": {
+    "prefix": "enum",
+    "body": [
+      "\frac{$1}{$2}"
+    ],
+    "description": "Latex fraction"
+  },
+  "Latex image": {
+    "prefix": "graph",
+    "body": [
+      "\\begin{figure}[H]",
+      " \\centering",
+      " \\captionsetup{justification=centering}",
+      " \\includegraphics[width=\\textwidth,center]{$1}",
+      " \\caption{$2}",
+      " \\label{$3}",
+      "\\end{figure}"
+    ],
+    "description": "Latex image"
+  },
+  "Latex itemize": {
+    "prefix": "itemize",
+    "body": [
+      "\\begin{itemize}",
+      "  \\item",
+      "  \\item",
+      "\\end{itemize}"
+    ],
+    "description": "Latex itemize"
+  },
+  "Latex item": {
+    "prefix": "item",
+    "body": [
+      "\\item"
+    ],
+    "description": "Latex item"
+  },
+  "Latex math case": {
+    "prefix": "cases",
+    "body": [
+      "\\begin{equation}",
+      "    \\begin{cases}",
+      "      $1\\\\",
+      "      ",
+      "    \\end{cases}\\",
+      "\\end{equation}"
+    ],
+    "description": "Latex math case"
+  },
+  "Latex math matrix": {
+    "prefix": "matr",
+    "body": [
+      "\\begin{bmatrix} ",
+      "    $1 & \\dots \\\\",
+      "    $2 & \\dots \\\\",
+      "\\end{bmatrix}"
+    ],
+    "description": "Latex math matrix"
+  },
+  "Latex bold": {
+    "prefix": "bol",
+    "body": [
+      "\\textbf{$1}"
+    ],
+    "description": "Latex bold"
+  }
+}

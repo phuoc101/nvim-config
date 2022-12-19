@@ -1,0 +1,23 @@
+{
+  "Pycuda import": {
+    "prefix": [ "imp", "pycuda" ],
+    "body": [
+      "import pycuda.driver as cuda",
+      "import pycuda.autoinit",
+      "from pycuda.compiler import SourceModule"
+    ],
+    "description": "Pycuda import"
+  },
+  "Cuda function def": {
+    "prefix": "cudafunc",
+    "body": [
+      "cuda_func_def = \"\"\"",
+      "  __global__ void ${1:func_name}(${2:params})",
+      "  {",
+        "    ${3:pass}",
+        "  }",
+        "\"\"\""
+    ],
+    "description": "Cuda function def"
+  }
+}

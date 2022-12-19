@@ -12,8 +12,16 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
-		formatting.black.with({ extra_args = { "--fast" } }),
+		formatting.black.with({ extra_args = { "--line-length=88" } }),
 		formatting.stylua,
-    -- diagnostics.flake8
+		diagnostics.flake8.with({
+			extra_args = { "--max-line-length=88", "--extend-ignore=E203" },
+		}),
+		-- Lua
+		formatting.stylua,
+		-- LaTeX
+		formatting.latexindent,
+		-- Markdown
+		formatting.mdformat,
 	},
 })

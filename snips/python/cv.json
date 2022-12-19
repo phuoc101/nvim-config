@@ -1,0 +1,51 @@
+{
+  "CV2 video capture": {
+    "prefix": "vid",
+    "body": [
+      "cam = cv2.VideoCapture($1)",
+      "while True:",
+      "  ret, frame = cam.read()",
+      "  if ret:",
+      "    pass",
+      "  else:",
+      "    pass",
+      ""
+    ],
+    "description": "CV2 video capture"
+  },
+  "CV2 aruco detect markers": {
+    "prefix": "aruco",
+    "body": [
+      "corners, ids, _rejected, = aruco.detectMarkers(gray, aruco_dict)"
+    ],
+    "description": "CV2 aruco detect markers"
+  },
+  "CV2 Bridge cv2 to ros": {
+    "prefix": "brid",
+    "body": [
+      "imgMsg = self.bridge.cv2_to_imgmsg(frame, 'bgr8')"
+    ],
+    "description": "CV2 Bridge cv2 to ros"
+  },
+  "CV2 Aruco get dictionary": {
+    "prefix": "aruco",
+    "body": [
+      "aruco_dict = aruco.getPredefinedDictionary(aruco.DICT_4X4_250)"
+    ],
+    "description": "CV2 Aruco get dictionary"
+  },
+  "CV2 convert color": {
+    "prefix": "cvt",
+    "body": [
+      " = cv2.cvtColor($1, cv2.$2)"
+    ],
+    "description": "CV2 convert color"
+  },
+  "CV2 imshow": {
+    "prefix": "ims",
+    "body": [
+      "cv2.imshow($1, $2)"
+    ],
+    "description": "CV2 imshow"
+  }
+}

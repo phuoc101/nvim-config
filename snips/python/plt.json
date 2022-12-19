@@ -1,0 +1,40 @@
+{
+  "Plot 2,2": {
+    "prefix": ["subp22", "plt22"],
+    "body": [
+      "fig, ax = plt.subplots(2, 2)",
+      "ax[0, 0].plot(${1:plt1})",
+      "",
+      "ax[0, 1].plot(${2:plt2})",
+      "",
+      "ax[1, 0].plot(${3:plt3})",
+      "",
+      "ax[1, 1].plot(${4:plt4})",
+      "plt.show()",
+      ""
+    ],
+    "description": "Plot 2,2"
+  },
+  "Plot 3": {
+    "prefix": [ "subp3", "plt3" ],
+    "body": [
+      "fig, ax = plt.subplots(3)",
+      "ax[0].plot(${1:plt1})",
+      "",
+      "ax[1].plot(${2:plt2})",
+      "",
+      "ax[2].plot(${3:plt3})",
+      "",
+      "plt.show()",
+      ""
+    ],
+    "description": "Plot 2,2"
+  },
+  "set label": {
+    "prefix": ["lab", "lbl", "pltlbl"],
+    "body": [
+      "${1:ax}.set(xlabel=\"${2:labelx}\", ylabel=\"${3:labely}\")"
+    ],
+    "description": "set label"
+  }
+}

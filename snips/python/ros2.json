@@ -1,0 +1,70 @@
+{
+  "ROS2 Imports": {
+    "prefix": "ros2:im",
+    "body": [
+      "import rclpy",
+      "from rclpy.node import Node"
+    ],
+    "description": "ROS2 Imports"
+  },
+  "ROS2 Publisher": {
+    "prefix": "ros2:pub",
+    "body": [
+      "${1:name} = self.create_publisher(${2:type}, ${3:topic}, ${4:queuesz})"
+    ],
+    "description": "ROS2 Publisher"
+  },
+  "ROS2 Subscriber": {
+    "prefix": "ros2:sub",
+    "body": [
+      "${1:name} = self.create_subscription(${2:type}, ${3:topic}, self.${4:func}_callback, ${5:queuesz})"
+    ],
+    "description": "ROS2 Subscriber"
+  },
+  "ROS2 timer": {
+    "prefix": "ros2:timer",
+    "body": [
+      "${1:timer} = self.create_timer(${2:timer_period}, self.${3:timer}_callback)"
+    ],
+    "description": "ROS2 timer"
+  },
+  "ROS2 node class": {
+    "prefix": "ros2:nodeclass",
+    "body": [
+      "class ${1:Node class name}(Node):",
+      "    def __init__(self):",
+      "        super().__init__('${2: node name}')"
+    ],
+    "description": "Ros2 node class"
+  },
+  "ROS2 launch file Python format init": {
+    "prefix": "ros2:launch",
+    "body": [
+      "from ament_index_python import get_package_share_directory",
+      "from launch import LaunchDescription",
+      "from launch.actions import DeclareLaunchArgument",
+      "from launch.actions import IncludeLaunchDescription",
+      "from launch.launch_description_sources import PythonLaunchDescriptionSource",
+      "from launch.substitutions import LaunchConfiguration",
+      "from launch.substitutions import TextSubstitution",
+      "from launch_ros.actions import Node",
+      "",
+      "import os",
+      "import sys",
+      "",
+      "def generate_launch_description():",
+      "    ld = LaunchDescription()",
+      "    ",
+      "    return ld",
+      ""
+    ],
+    "description": "ROS2 launch file Python format init"
+  },
+  "ROS2 Logger": {
+    "prefix": "ros2:loginfo",
+    "body": [
+      "self.get_logger().info(f'${1:info}')"
+    ],
+    "description": "ROS2 Logger"
+  }
+}

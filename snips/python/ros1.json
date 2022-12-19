@@ -1,0 +1,74 @@
+
+{
+  "subscriber": {
+    "scope": "python",
+    "prefix": "ros1:subscriber",
+    "body": "${1:message}_sub = rospy.Subscriber(\"${2:topic}\", ${3:Type}, ${4:callback})\n${0}",
+    "description": "ROS subscriber"
+  },
+  "publisher": {
+    "scope": "python",
+    "prefix": "ros1:publisher",
+    "body": "${1:message}_pub = rospy.Publisher(\"${2:topic}\", ${3:type}, queue_size=${4:10})\n${0}",
+    "description": "ROS publisher"
+  },
+  "rosnode template": {
+    "scope": "python",
+    "prefix": "ros1:rosnode",
+    "body": [
+      "#!/usr/bin/env python",
+      "import rospy \n",
+      "class ${1:Ros}Node:",
+      "\tdef __init__(self):",
+      "\t\trospy.init_node(\"${2:ros_node}\")",
+      "\t\trospy.loginfo(\"Starting ${1:Ros}Node.\")\n",
+      "\t\t${0:pass}\n\n",
+      "if __name__ == \"__main__\":",
+      "\t${2:ros_node} = ${1:Ros}Node()",
+      "\trospy.spin()"
+    ],
+    "description": "ROS node template"
+  },
+  "periodic timer": {
+    "scope": "py",
+    "prefix": "ros1:timer",
+    "body": "rospy.Timer(rospy.Duration(1.0 / ${1:10}), ${2:callback})\n${0}",
+    "description": "ROS periodic timer"
+  },
+  "param": {
+    "scope": "py",
+    "prefix": "ros1:param",
+    "body": "${1:param} = rospy.get_param(\"~${2:param}\", default=\"${3:0}\")\n${0}",
+    "description": "ROS get param"
+  },
+  "service server": {
+    "scope": "py",
+    "prefix": "ros1:service",
+    "body": "${1:srv_server_handler} = rospy.Service(${2:service_name}, ${3:service_type}, ${4:service_callback})\n${0}",
+    "description": "ROS service server"
+  },
+  "service client": {
+    "scope": "py",
+    "prefix": "ros1:service",
+    "body": "${1:srv_client_handler} = rospy.ServiceProxy(${2:service_name}, ${3:service_type})\n${0}",
+    "description": "ROS service client"
+  },
+  "service wait": {
+    "scope": "py",
+    "prefix": "ros1:service",
+    "body": "rospy.wait_for_service(${1:service_name})\n${0}",
+    "description": "ROS service wait"
+  },
+  "service wait client": {
+    "scope": "py",
+    "prefix": "ros1:service",
+    "body": [
+      "rospy.wait_for_service(${1:service_name})",
+      "try:",
+      "\t${2:srv_client_handler} = rospy.ServiceProxy(${1:service_name}, ${3:service_type})\n\t${0}",
+      "except rospy.ServiceException as e:",
+      "\tprint(e)"
+    ],
+    "description": "ROS service client wrapped with try/except and prior wait for service."
+  }
+}
