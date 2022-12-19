@@ -1,29 +1,30 @@
 -- Core
-require "core.options"
-require "core.plugins"
-require "core.keymaps"
-require "core.lsp"
-require "core.autocommands"
+require("core.options")
+require("core.plugins")
+require("core.keymaps")
+require("core.lsp")
+require("core.autocommands")
 -- Plugin configs
-require "config.nvim-notify"
-require "config.luasnip"
-require "config.neogen"
-require "config.project"
-require "config.impatient"
-require "config.cmp"
-require "config.colorscheme"
-require "config.telescope"
-require "config.gitsigns"
-require "config.treesitter"
-require "config.autopairs"
-require "config.comment"
-require "config.nvim-tree"
-require "config.bufferline"
-require "config.lualine"
-require "config.toggleterm"
-require "config.indentline"
-require "config.alpha"
-require "config.whichkey"
-require "config.lsp-lines"
-require "config.hop"
-require "config.cinnamon"
+require("config.nvim-notify")
+require("config.luasnip")
+require("config.neogen")
+require("config.project")
+require("config.impatient")
+require("config.tabnine")
+require("config.cmp")
+require("config.colorscheme")
+require("config.telescope")
+require("config.gitsigns")
+require("config.treesitter")
+require("config.autopairs")
+require("config.comment")
+require("config.nvim-tree")
+require("config.bufferline")
+require("config.lualine")
+require("config.toggleterm")
+require("config.indentline")
+require("config.alpha")
+require("config.whichkey")
+require("config.lsp-lines")
+require("config.hop")
+require("config.cinnamon")
