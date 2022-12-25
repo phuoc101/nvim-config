@@ -114,12 +114,12 @@ ins_left({
 ins_left({
 	function()
 		local curr_mode = {
-			n = "NORMAL",
-			i = "INSERT",
-			v = "VISUAL",
-			[""] = "V-BLOCK",
-			V = "VISUAL",
-      c = "COMMAND"
+			n = "N",
+			i = "I",
+			v = "V",
+			[""] = "VB",
+			V = "VL",
+			c = "C",
 		}
 		return "" .. " " .. curr_mode[vim.fn.mode()]
 	end,
@@ -147,7 +147,7 @@ ins_left({
 			["!"] = colors.red,
 			t = colors.red,
 		}
-		return { fg = mode_color[vim.fn.mode()], gui = "bold"}
+		return { fg = mode_color[vim.fn.mode()], gui = "bold" }
 	end,
 	padding = { right = 1 },
 })
@@ -164,7 +164,7 @@ ins_left({
 	color = { fg = colors.magenta, gui = "bold" },
 })
 
-ins_left({ "location" })
+ins_left({ "location", color = { fg = colors.fg, gui = "bold" } })
 
 ins_left({ "progress", color = { fg = colors.fg, gui = "bold" } })
 
@@ -179,13 +179,13 @@ ins_left({
 	},
 })
 
--- Insert mid section. You can make any number of sections in neovim :)
--- for lualine it's any number greater then 2
-ins_left({
-	function()
-		return "%="
-	end,
-})
+-- -- Insert mid section. You can make any number of sections in neovim :)
+-- -- for lualine it's any number greater then 2
+-- ins_left({
+-- 	function()
+-- 		return "%="
+-- 	end,
+-- })
 
 ins_left({
 	-- Lsp server name .
@@ -205,7 +205,7 @@ ins_left({
 		return msg
 	end,
 	icon = " LSP:",
-	color = { fg = "#ffffff", gui = "bold" },
+	color = { fg = colors.green, gui = "bold" },
 })
 
 -- Add components to right sections
@@ -245,7 +245,32 @@ ins_right({
 	function()
 		return "▊"
 	end,
-	color = { fg = colors.blue },
+	color = function()
+		-- auto change color according to neovims mode
+		local mode_color = {
+			n = colors.red,
+			i = colors.yellow,
+			v = colors.blue,
+			[""] = colors.blue,
+			V = colors.blue,
+			c = colors.magenta,
+			no = colors.red,
+			s = colors.orange,
+			S = colors.orange,
+			[""] = colors.orange,
+			ic = colors.green,
+			R = colors.violet,
+			Rv = colors.violet,
+			cv = colors.red,
+			ce = colors.red,
+			r = colors.cyan,
+			rm = colors.cyan,
+			["r?"] = colors.cyan,
+			["!"] = colors.red,
+			t = colors.red,
+		}
+		return { fg = mode_color[vim.fn.mode()] }
+	end,
 	padding = { left = 1 },
 })
 
