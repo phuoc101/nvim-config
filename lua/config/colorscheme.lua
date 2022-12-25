@@ -1,5 +1,5 @@
 local plugin = "colorscheme"
-local colorscheme = "onedarker"
+local colorscheme = "vscode"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
@@ -8,4 +8,3 @@ if not status_ok then
   })
   return
 end
-
