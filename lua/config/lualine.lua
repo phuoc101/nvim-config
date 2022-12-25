@@ -106,7 +106,7 @@ ins_left({
 			["!"] = colors.red,
 			t = colors.red,
 		}
-		return { fg = mode_color[vim.fn.mode()] }
+		return { fg = mode_color[vim.fn.mode()], gui = "bold" }
 	end,
 	padding = { left = 0, right = 1 }, -- We don't need space before this
 })
@@ -131,12 +131,12 @@ ins_left({
 			v = colors.blue,
 			[""] = colors.blue,
 			V = colors.blue,
-			c = colors.green,
+			c = colors.magenta,
 			no = colors.red,
 			s = colors.orange,
 			S = colors.orange,
 			[""] = colors.orange,
-			ic = colors.yellow,
+			ic = colors.green,
 			R = colors.violet,
 			Rv = colors.violet,
 			cv = colors.red,
