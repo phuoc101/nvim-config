@@ -69,7 +69,7 @@ local setup = {
   },
 }
 
-local opts = {
+local main_opts = {
   mode = "n", -- NORMAL mode
   prefix = "<leader>",
   buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
@@ -78,7 +78,7 @@ local opts = {
   nowait = true, -- use `nowait` when creating keymaps
 }
 
-local mappings = {
+local main_mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["b"] = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -181,5 +181,27 @@ local mappings = {
   },
 }
 
+local sub_opts = {
+  mode = "n", -- NORMAL mode
+  prefix = "\\",
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+  silent = true, -- use `silent` when creating keymaps
+  noremap = true, -- use `noremap` when creating keymaps
+  nowait = true, -- use `nowait` when creating keymaps
+}
+
+local sub_mappings = {
+  l = {
+    name = "Latex",
+    l = { "<cmd>VimtexCompile<cr>", "Compile LaTeX file" },
+    v = { "<cmd>VimtexView<cr>", "View pdf" },
+  },
+  m = {
+    name = "Markdown",
+    p = { "<cmd>MarkdownPreview<cr>", "Preview Markdown" },
+  }
+}
+
 which_key.setup(setup)
-which_key.register(mappings, opts)
+which_key.register(main_mappings, main_opts)
+which_key.register(sub_mappings, sub_opts)
