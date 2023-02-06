@@ -217,6 +217,17 @@
     ],
     "description": "Loguru level setting"
   },
+  "ALive Bar init": {
+    "prefix": [
+      "alive_bar",
+      "bar"
+    ],
+    "body": [
+      "with alive_bar(int(${1:len}), ctrl_c=False, title=f\"${2:title}\") as bar:",
+      ""
+    ],
+    "description": "ALive Bar init"
+  },
   "Benchmarking": {
     "prefix": [
       "elaps",
