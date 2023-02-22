@@ -12,9 +12,9 @@ null_ls.setup({
 	debug = false,
 	sources = {
     -- Python
-		formatting.black.with({ extra_args = { "--line-length=88" } }),
+		formatting.black.with({ extra_args = { "--line-length=120" } }),
 		diagnostics.flake8.with({
-			extra_args = { "--max-line-length=88", "--extend-ignore=E203" },
+			extra_args = { "--max-line-length=120", "--extend-ignore=E203" },
 		}),
 		-- Lua
 		formatting.stylua,

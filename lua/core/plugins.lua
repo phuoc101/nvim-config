@@ -138,8 +138,8 @@ return packer.startup(function(use)
 	-- Colorizer
 	use({ "norcalli/nvim-colorizer.lua" })
 
-	-- Smooth scrolling
-	use({ "declancm/cinnamon.nvim" })
+	-- -- Smooth scrolling
+	-- use({ "declancm/cinnamon.nvim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
