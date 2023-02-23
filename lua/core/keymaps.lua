@@ -1,6 +1,6 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
+-- local term_opts = { silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
@@ -8,7 +8,7 @@ local keymap = vim.api.nvim_set_keymap
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = "\\"
 
 -- Modes
 --   normal_mode = "n",
@@ -18,7 +18,7 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal --
+-- NORMAL --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -43,14 +43,39 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==g", opts)
 keymap("n", "B", "^", opts)
 keymap("n", "E", "$", opts)
 
--- Insert --
+keymap("n", "<leader>h", "<cmd>nohlsearch<cr>", opts)
+-- -- Plugins --
+-- -- Alpha --
+-- keymap("n", "<leader>a", "<cmd>Alpha<cr>", opts)
+-- -- Telescope --
+-- keymap("n", "<leader>b", "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", opts)
+-- keymap("n", "<leader>f", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", opts)
+-- keymap("n", "<leader>F", "<cmd>Telescope live_grep theme=ivy<cr>", opts)
+-- -- NvimTree --
+-- keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
+-- -- GitSigns --
+-- keymap("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", opts)
+-- keymap("n", "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", opts)
+-- keymap("n", "<leader>gp", "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", opts)
+-- keymap("n", "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", opts)
+-- -- Lsp --
+-- keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{async=true}<cr>", opts)
+-- keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+-- -- VimTex --
+-- keymap("n", "<localleader>ll", "<cmd>VimtexCompile<cr>", opts)
+-- keymap("n", "<localleader>lv", "<cmd>VimtexView<cr>", opts)
+-- -- MarkdownPreview --
+-- keymap("n", "<localleader>mp", "<cmd>MarkdownPreview<cr>", opts)
+
+-- INSERT --
 -- Press jk fast to exit insert mode 
 keymap("i", "jk", "<ESC>", opts)
 
--- Delete a word with ctr+backspace
+-- Delete a word with ctr+bs/ctr+del
 keymap("i", "<C-Backspace>", "<ESC>bdwi", opts)
+keymap("i", "<C-Delete>", "<ESC>dwi", opts)
 
--- Visual --
+-- VISUAL --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
@@ -64,17 +89,9 @@ keymap("v", "p", '"_dP', opts)
 keymap("v", "B", "^", opts)
 keymap("v", "E", "$", opts)
 
--- Visual Block --
+-- VISUAL BLOCK --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
--- Terminal --
--- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-

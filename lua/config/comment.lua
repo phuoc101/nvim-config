@@ -6,14 +6,14 @@ end
 comment.setup({
 	toggler = {
 		---Line-comment toggle keymap
-		line = "<leader>/",
+    line = "<C-/>",
 		---Block-comment toggle keymap
 		block = "gbc",
 	},
 	---LHS of operator-pending mappings in NORMAL and VISUAL mode
 	opleader = {
 		---Line-comment keymap
-		line = "<leader>/",
+    line = "<C-/>",
 		---Block-comment keymap
 		block = "gb",
 	},
