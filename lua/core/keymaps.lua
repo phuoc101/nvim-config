@@ -43,29 +43,29 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==g", opts)
 keymap("n", "B", "^", opts)
 keymap("n", "E", "$", opts)
 
-keymap("n", "<leader>h", "<cmd>nohlsearch<cr>", opts)
--- -- Plugins --
--- -- Alpha --
--- keymap("n", "<leader>a", "<cmd>Alpha<cr>", opts)
--- -- Telescope --
--- keymap("n", "<leader>b", "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", opts)
--- keymap("n", "<leader>f", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", opts)
--- keymap("n", "<leader>F", "<cmd>Telescope live_grep theme=ivy<cr>", opts)
--- -- NvimTree --
--- keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
--- -- GitSigns --
--- keymap("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", opts)
--- keymap("n", "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", opts)
--- keymap("n", "<leader>gp", "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", opts)
--- keymap("n", "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", opts)
--- -- Lsp --
--- keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{async=true}<cr>", opts)
--- keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
--- -- VimTex --
--- keymap("n", "<localleader>ll", "<cmd>VimtexCompile<cr>", opts)
--- keymap("n", "<localleader>lv", "<cmd>VimtexView<cr>", opts)
--- -- MarkdownPreview --
--- keymap("n", "<localleader>mp", "<cmd>MarkdownPreview<cr>", opts)
+-- keymap("n", "<leader>h", "<cmd>nohlsearch<cr>", opts)
+-- Plugins --
+-- Alpha --
+keymap("n", "<leader>a", "<cmd>Alpha<cr>", opts)
+-- Telescope --
+keymap("n", "<leader>b", "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", opts)
+keymap("n", "<leader>f", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", opts)
+keymap("n", "<leader>F", "<cmd>Telescope live_grep theme=ivy<cr>", opts)
+-- NvimTree --
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
+-- GitSigns --
+keymap("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", opts)
+keymap("n", "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", opts)
+keymap("n", "<leader>gp", "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", opts)
+keymap("n", "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", opts)
+-- Lsp --
+keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{async=true}<cr>", opts)
+keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+-- VimTex --
+keymap("n", "<localleader>ll", "<cmd>VimtexCompile<cr>", opts)
+keymap("n", "<localleader>lv", "<cmd>VimtexView<cr>", opts)
+-- MarkdownPreview --
+keymap("n", "<localleader>mp", "<cmd>MarkdownPreview<cr>", opts)
 
 -- INSERT --
 -- Press jk fast to exit insert mode 
