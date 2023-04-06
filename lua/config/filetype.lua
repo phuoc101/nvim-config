@@ -8,6 +8,7 @@ filetype.setup({
 		extensions = {
       -- Set launch files for ros to xml
       launch = "xml",
+      tex = "tex",
 		},
 		literal = {
 			-- Set the filetype of files named "MyBackupFile" to lua

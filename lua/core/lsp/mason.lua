@@ -4,6 +4,7 @@ local servers = {
 	-- "html",
 	-- "tsserver",
 	"jedi_language_server",
+  "texlab",
 	"bashls",
 	"jsonls",
 	-- "yamlls",

@@ -43,6 +43,12 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==g", opts)
 keymap("n", "B", "^", opts)
 keymap("n", "E", "$", opts)
 
+-- Move cursor up/down base on what's displayed on the screen instead of the actual line
+keymap("n", "j", "gj", opts)
+keymap("n", "k", "gk", opts)
+keymap("v", "j", "gj", opts)
+keymap("v", "k", "gk", opts)
+
 -- keymap("n", "<leader>h", "<cmd>nohlsearch<cr>", opts)
 -- Plugins --
 -- Alpha --

@@ -132,6 +132,7 @@ cmp.setup({
 		end,
 	},
 	sources = {
+		{ name = "omni" },
 		{ name = "nvim_lsp" },
 		{ name = "cmp_tabnine" },
 		{ name = "luasnip" },
@@ -153,20 +154,20 @@ cmp.setup({
 	},
 })
 
-local compare = require('cmp.config.compare')
+local compare = require("cmp.config.compare")
 cmp.setup({
-  sorting = {
-    priority_weight = 2,
-    comparators = {
-      require('cmp_tabnine.compare'),
-      compare.offset,
-      compare.exact,
-      compare.score,
-      compare.recently_used,
-      compare.kind,
-      compare.sort_text,
-      compare.length,
-      compare.order,
-    },
-  },
+	sorting = {
+		priority_weight = 2,
+		comparators = {
+			require("cmp_tabnine.compare"),
+			compare.offset,
+			compare.exact,
+			compare.score,
+			compare.recently_used,
+			compare.kind,
+			compare.sort_text,
+			compare.length,
+			compare.order,
+		},
+	},
 })
