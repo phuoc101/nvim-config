@@ -1,7 +1,7 @@
--- Eviline config for lualine
--- Author: shadmansaleh
--- Credit: glepnir
-local lualine = require("lualine")
+local status_ok, lualine = pcall(require, "lualine")
+if not status_ok then
+	return
+end
 
 -- Color table for highlights
 -- stylua: ignore
@@ -153,22 +153,49 @@ ins_left({
 })
 
 ins_left({
-	-- filesize component
-	"filesize",
-	cond = conditions.buffer_not_empty,
+	"buffers",
+	show_filename_only = true, -- Shows shortened relative path when set to false.
+	hide_filename_extension = false, -- Hide filename extension when set to true.
+	show_modified_status = true, -- Shows indicator when the buffer is modified.
+
+	mode = 4, -- 0: Shows buffer name
+	-- 1: Shows buffer index
+	-- 2: Shows buffer name + buffer index
+	-- 3: Shows buffer number
+	-- 4: Shows buffer name + buffer number
+
+	filetype_names = {
+		TelescopePrompt = "Telescope",
+		dashboard = "Dashboard",
+		packer = "Packer",
+		fzf = "FZF",
+		alpha = "Alpha",
+	}, -- Shows specific buffer name for that filetype ( { `filetype` = `buffer_name`, ... } )
+
+	buffers_color = {
+		-- Same values as the general color option can be used here.
+		active = { fg = colors.blue, bg = colors.darkgray, gui = "bold" }, -- Color for active buffer.
+		inactive = { fg = colors.cyan, bg = colors.bg, gui = "bold" }, -- Color for inactive buffer.
+	},
+
+	symbols = {
+		modified = " ●", -- Text to show when the buffer is modified
+		directory = "", -- Text to show when the buffer is a directory
+		alternate_file = "", -- Text to show to identify the alternate file
+	},
 })
 
-ins_left({
-	"filename",
-	cond = conditions.buffer_not_empty,
-	color = { fg = colors.magenta, gui = "bold" },
-})
+-- ins_right({
+-- 	-- filesize component
+-- 	"filesize",
+-- 	cond = conditions.buffer_not_empty,
+-- })
 
-ins_left({ "location", color = { fg = colors.fg, gui = "bold" } })
+ins_right({ "location", color = { fg = colors.fg, gui = "bold" } })
 
-ins_left({ "progress", color = { fg = colors.fg, gui = "bold" } })
+ins_right({ "progress", color = { fg = colors.fg, gui = "bold" } })
 
-ins_left({
+ins_right({
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
 	symbols = { error = " ", warn = " ", info = " " },
@@ -187,7 +214,7 @@ ins_left({
 -- 	end,
 -- })
 
-ins_left({
+ins_right({
 	-- Lsp server name .
 	function()
 		local msg = "No Active Lsp"
@@ -208,20 +235,13 @@ ins_left({
 	color = { fg = colors.green, gui = "bold" },
 })
 
--- Add components to right sections
-ins_right({
-	"o:encoding", -- option component same as &encoding in viml
-	fmt = string.upper, -- I'm not sure why it's upper case either ;)
-	cond = conditions.hide_in_width,
-	color = { fg = colors.green, gui = "bold" },
-})
-
-ins_right({
-	"fileformat",
-	fmt = string.upper,
-	icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-	color = { fg = colors.green, gui = "bold" },
-})
+-- -- Add components to right sections
+-- ins_right({
+-- 	"o:encoding", -- option component same as &encoding in viml
+-- 	fmt = string.upper, -- I'm not sure why it's upper case either ;)
+-- 	cond = conditions.hide_in_width,
+-- 	color = { fg = colors.orange, gui = "bold" },
+-- })
 
 ins_right({
 	"branch",
@@ -242,9 +262,16 @@ ins_right({
 })
 
 ins_right({
-	function()
-		return "▊"
-	end,
+	"fileformat",
+
+	symbols = {
+		unix = "UNIX ", -- e712
+		dos = "WIN ", -- e70f
+		mac = "MAC ", -- e711
+	},
+	fmt = string.upper,
+	icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
+
 	color = function()
 		-- auto change color according to neovims mode
 		local mode_color = {
@@ -269,10 +296,42 @@ ins_right({
 			["!"] = colors.red,
 			t = colors.red,
 		}
-		return { fg = mode_color[vim.fn.mode()] }
+		return { fg = colors.bg, bg = mode_color[vim.fn.mode()], gui = "bold" }
 	end,
-	padding = { left = 1 },
 })
+
+-- ins_right({
+-- 	function()
+-- 		return "▊"
+-- 	end,
+-- 	color = function()
+-- 		-- auto change color according to neovims mode
+-- 		local mode_color = {
+-- 			n = colors.red,
+-- 			i = colors.yellow,
+-- 			v = colors.blue,
+-- 			[""] = colors.blue,
+-- 			V = colors.blue,
+-- 			c = colors.magenta,
+-- 			no = colors.red,
+-- 			s = colors.orange,
+-- 			S = colors.orange,
+-- 			[""] = colors.orange,
+-- 			ic = colors.green,
+-- 			R = colors.violet,
+-- 			Rv = colors.violet,
+-- 			cv = colors.red,
+-- 			ce = colors.red,
+-- 			r = colors.cyan,
+-- 			rm = colors.cyan,
+-- 			["r?"] = colors.cyan,
+-- 			["!"] = colors.red,
+-- 			t = colors.red,
+-- 		}
+-- 		return { fg = mode_color[vim.fn.mode()] }
+-- 	end,
+-- 	padding = { left = 1 },
+-- })
 
 -- Now don't forget to initialize lualine
 lualine.setup(config)
