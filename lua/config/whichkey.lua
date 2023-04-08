@@ -172,14 +172,14 @@ local main_mappings = {
     C = { "<cmd>Telescope commands<cr>", "Commands" },
   },
 
-  t = {
-    name = "Terminal",
-    n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-    p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-    f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-    h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-    v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-  },
+  -- t = {
+  --   name = "Terminal",
+  --   n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
+  --   p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
+  --   f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
+  --   h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
+  --   v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+  -- },
 }
 
 local sub_opts = {
