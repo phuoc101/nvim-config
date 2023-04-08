@@ -15,5 +15,7 @@ local t = {}
 -- Syntax: t[keys] = {function, {function arguments}}
 t['<C-b>'] = {'scroll', {'-vim.api.nvim_win_get_height(0)', 'true', '50'}}
 t['<C-f>'] = {'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '50'}}
+t['<C-u>'] = {'scroll', {'-vim.api.nvim_win_get_height(0)', 'true', '50'}}
+t['<C-d>'] = {'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '50'}}
 
 require('neoscroll.config').set_mappings(t)

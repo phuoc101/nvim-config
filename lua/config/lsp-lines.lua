@@ -5,6 +5,9 @@ end
 
 configs.setup()
 
+vim.diagnostic.config({ virtual_lines = false })
+vim.wo.signcolumn = "yes"
+
 vim.keymap.set(
   "",
   "<Leader><Leader>",

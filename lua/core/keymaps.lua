@@ -83,8 +83,8 @@ keymap("i", "<C-k>", "<Up>", opts)
 keymap("i", "<C-l>", "<Right>", opts)
 
 -- Delete a word with ctr+bs/ctr+del
-keymap("i", "<C-Backspace>", "<ESC>bdwi", opts)
-keymap("i", "<C-Delete>", "<ESC>dwi", opts)
+keymap("i", "<C-Backspace>", "<ESC>vbdi", opts)
+keymap("i", "<C-Delete>", "<ESC>ldwi", opts)
 
 -- VISUAL --
 -- Stay in indent mode
